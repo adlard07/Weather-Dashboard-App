@@ -106,14 +106,12 @@ const App = () => {
                 <p className="text-lg">{error}</p>
               </div>
             )}
-
             {/* Forecast Section */}
             {forecastData && (
               <div className="backdrop-blur-md rounded-xl border border-white/20 p-1">
                 <WeatherForecast data={forecastData} />
               </div>
             )}
-
 
             {/* Weather Data */}
             {!loading && !error && weatherData && (
