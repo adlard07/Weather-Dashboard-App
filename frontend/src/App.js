@@ -17,10 +17,10 @@ const App = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const weatherRes = await fetch(`http://127.0.0.1:8000/weather/?city=${city}`);
-      const uvRes = await fetch(`http://127.0.0.1:8000/uv-index/?city=${city}`);
-      const airQualityRes = await fetch(`http://127.0.0.1:8000/air-quality/?city=${city}`);
-      const forecastRes = await fetch(`http://127.0.0.1:8000/weather/forecast/?city=${city}`);
+      const weatherRes = await fetch(`http://13.203.90.88/weather/?city=${city}`);
+      const uvRes = await fetch(`http://13.203.90.88/uv-index/?city=${city}`);
+      const airQualityRes = await fetch(`http://13.203.90.88/air-quality/?city=${city}`);
+      const forecastRes = await fetch(`http://13.203.90.88/weather/forecast/?city=${city}`);
 
       if (!weatherRes.ok || !uvRes.ok || !airQualityRes.ok || !forecastRes.ok) {
         throw new Error('One or more API requests failed');

@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Line } from 'react-chartjs-2';
-import Chart from 'chart.js/auto';  // Import the core chart.js library
-import moment from 'moment';  // Import moment.js to format timestamps
+import moment from 'moment';
 
 const WeatherGraph = ({ data }) => {
-  // Set the threshold temperature for coloring the areas
   const TEMP_THRESHOLD = 25;
 
-  // Function to parse the API data and prepare it for the graph
   const prepareChartData = () => {
-    const timestamps = data.list.map(item => moment(item.dt_txt).format('HH:mm')); // Format timestamps to 'HH:mm' format
+    const timestamps = data.list.map(item => moment(item.dt_txt).format('HH:mm'));
     const tempValues = data.list.map(item => item.main.temp);
     const tempMinValues = data.list.map(item => item.main.temp_min);
     const tempMaxValues = data.list.map(item => item.main.temp_max);
