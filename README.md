@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Weather Dashboard App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Weather Dashboard App provides users with real-time weather data, including:
 
-In the project directory, you can run:
+- **Current Weather**: Displays the current weather conditions (temperature, humidity, wind speed, etc.).
+- **Weather Forecast**: Shows a 7-day weather forecast with expected high/low temperatures, precipitation, and weather conditions.
+- **Air Quality Index (AQI)**: Displays the current air quality, indicating pollution levels.
+- **UV Index**: Provides the current UV index to help users understand sun exposure risks.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Current Weather**: See live updates on temperature, humidity, wind speed, and weather conditions.
+- **Weather Forecast**: Access a 7-day forecast for your area.
+- **Air Quality Index (AQI)**: Get real-time air quality information for your location (with data on pollutants like PM2.5, PM10, CO, NO2, and Ozone).
+- **UV Index**: Learn the current UV index to determine safe sun exposure levels.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **Frontend**: React.js for building a responsive and dynamic interface.
+- **Backend**: FastAPI (Python) for handling API calls and serving data.
+- **APIs**: 
+  - OpenWeather API for weather and UV data.
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Python 3.x** (for the backend)
+- **Node.js** (for the frontend)
 
-### `npm run build`
+2. Create a virtual environment:
+    ```bash
+    python -m venv venv
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Activate the virtual environment:
+     ```bash
+     .\venv\Scripts\activate
+     ```
+4. Install required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. Create a `config.env` file in the root directory of the project and add your API keys:
+    ```bash
+    WEATHER_API_KEY=your-weather-api-key
+    AIR_QUALITY_API_KEY=your-air-quality-api-key
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. Start the FastAPI backend server:
+    ```bash
+    uvicorn app.main:app --reload
+    ```
 
-### `npm run eject`
+   The backend will run on `http://localhost:8000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Frontend Setup (React)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Install frontend dependencies:
+    ```bash
+    cd frontend
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Start the React development server:
+    ```bash
+    npm start
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   The frontend will run on `http://localhost:3000`.
