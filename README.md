@@ -44,7 +44,6 @@ The Weather Dashboard App provides users with real-time weather data, including:
 5. Create a `config.env` file in the root directory of the project and add your API keys:
     ```bash
     WEATHER_API_KEY=your-weather-api-key
-    AIR_QUALITY_API_KEY=your-air-quality-api-key
     ```
 
 6. Start the FastAPI backend server:
