@@ -1,7 +1,6 @@
 from fastapi import FastAPI, Query, HTTPException
 from pydantic import BaseModel
 import requests
-import time
 import os
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
@@ -10,9 +9,16 @@ load_dotenv("config.env")
 
 app = FastAPI()
 
+origins = [
+    "http://localhost:3000",
+    "http://localhost:8000", 
+    "http://52.66.143.178/", # frontend
+    "http://13.203.90.88/" # backend
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
