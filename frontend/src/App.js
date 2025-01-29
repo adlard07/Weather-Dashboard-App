@@ -18,21 +18,11 @@ const App = () => {
     setLoading(true);
     try {
       const weatherRes = await fetch(`http://13.203.90.88/weather/?city=${city}`, {
-        method: 'GET',
-        mode: 'no-cors',
+        
       });
-      const uvRes = await fetch(`http://13.203.90.88/uv-index/?city=${city}`, {
-        method: 'GET',
-        mode: 'no-cors',
-      });
-      const airQualityRes = await fetch(`http://13.203.90.88/air-quality/?city=${city}`, {
-        method: 'GET',
-        mode: 'no-cors',
-      });
-      const forecastRes = await fetch(`http://13.203.90.88/weather/forecast/?city=${city}`, {
-        method: 'GET',
-        mode: 'no-cors',
-      });
+      const uvRes = await fetch(`http://13.203.90.88/uv-index/?city=${city}`);
+      const airQualityRes = await fetch(`http://13.203.90.88/air-quality/?city=${city}`);
+      const forecastRes = await fetch(`http://13.203.90.88/weather/forecast/?city=${city}`);
 
       if (!weatherRes.ok || !uvRes.ok || !airQualityRes.ok || !forecastRes.ok) {
         throw new Error('One or more API requests failed');
@@ -118,6 +108,7 @@ const App = () => {
                 <p className="text-lg">{error}</p>
               </div>
             )}
+
             {/* Forecast Section */}
             {forecastData && (
               <div className="backdrop-blur-md rounded-xl border border-white/20 p-1">
