@@ -33,7 +33,7 @@ function Weather({ data }) {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden p-10">
       {/* Header Section */}
       <div className={`${getBackgroundColor(temperature)} px-6 py-4 border-b border-gray-200`}>
         <h2 className="text-2xl font-bold text-gray-800">Current Weather</h2>
