@@ -44,7 +44,7 @@ function UVIndex({ data }) {
         </div>
 
         {/* UV Index Display */}
-        <div className="flex flex-col items-center mb-6">
+        <div className="flex flex-col items-center mb-6 p-3">
           <div className={`${getUVBackgroundColor(value)} w-24 h-24 rounded-full flex items-center justify-center mb-4`}>
             <span className={`text-4xl font-bold ${getUVTextColor(value)}`}>{value.toFixed(1)}</span>
           </div>
