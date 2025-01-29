@@ -48,7 +48,7 @@ The Weather Dashboard App provides users with real-time weather data, including:
 
 6. Start the FastAPI backend server:
     ```bash
-    uvicorn app.main:app --reload
+    uvicorn main:app --reload
     ```
 
    The backend will run on `http://localhost:8000`.
